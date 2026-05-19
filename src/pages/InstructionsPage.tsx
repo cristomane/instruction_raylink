@@ -390,15 +390,10 @@ const InstructionsPage = () => {
                   onClick={() => setSelectedPlatform(platform.id)}
                   className={`relative rounded-2xl p-5 text-center transition-all duration-300 overflow-hidden border ${
                     isActive
-                      ? 'bg-lime/[0.03] border-lime/50 dark:border-lime'
+                      ? 'bg-lime/[0.03] border-lime/55 shadow-[0_0_0_1px_rgba(163,230,53,0.25),0_8px_24px_rgba(163,230,53,0.08)]'
                       : 'bg-gray-100 dark:bg-[#111] border-black/[0.08] dark:border-white/[0.08] hover:-translate-y-1 hover:border-black/20 dark:hover:border-white/20'
                   }`}
                 >
-                  <div
-                    className={`absolute top-0 left-0 right-0 h-0.5 bg-lime transition-transform duration-300 origin-left ${
-                      isActive ? 'scale-x-100' : 'scale-x-0'
-                    }`}
-                  />
                   <Icon
                     className={`w-10 h-10 mx-auto mb-3 transition-colors duration-300 ${
                       isActive ? 'text-lime animate-float-icon' : 'text-gray-400 dark:text-gray-500'
