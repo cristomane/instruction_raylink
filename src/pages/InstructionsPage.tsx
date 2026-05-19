@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ChevronDown } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+﻿import { useEffect, useRef, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -82,8 +81,8 @@ const platformsData: PlatformData[] = [
     steps: [
       {
         number: '01',
-        title: 'Скачайте приложение',
-        description: 'Установите официальное приложение Happ из App Store:',
+        title: 'РЎРєР°С‡Р°Р№С‚Рµ РїСЂРёР»РѕР¶РµРЅРёРµ',
+        description: 'РЈСЃС‚Р°РЅРѕРІРёС‚Рµ РѕС„РёС†РёР°Р»СЊРЅРѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ Happ РёР· App Store:',
         action: (
           <div className="flex flex-col gap-3">
             <a
@@ -94,11 +93,11 @@ const platformsData: PlatformData[] = [
             >
               <AppStoreIcon className="w-9 h-9 flex-shrink-0 text-lime transition-transform duration-300 group-hover:scale-110" />
               <div className="flex flex-col leading-tight min-w-0">
-                <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Загрузить клиент</small>
+                <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Р—Р°РіСЂСѓР·РёС‚СЊ РєР»РёРµРЅС‚</small>
                 <div className="flex items-start gap-2 flex-wrap">
-                  <span className="text-base font-bold tracking-tight">HAPP в App Store</span>
+                  <span className="text-base font-bold tracking-tight">HAPP РІ App Store</span>
                   <span className="px-1.5 py-0.5 rounded-md bg-lime/10 text-lime text-[10px] font-bold uppercase tracking-wide border border-lime/20 mt-0.5">
-                    Рекомендуем
+                    Р РµРєРѕРјРµРЅРґСѓРµРј
                   </span>
                 </div>
               </div>
@@ -111,7 +110,7 @@ const platformsData: PlatformData[] = [
             >
               <AppStoreIcon className="w-7 h-7 flex-shrink-0 text-lime/70 transition-transform duration-300 group-hover:scale-110" />
               <div className="flex flex-col leading-tight">
-                <small className="text-[10px] text-gray-400 dark:text-gray-500 font-normal uppercase tracking-wide">Альтернативный клиент</small>
+                <small className="text-[10px] text-gray-400 dark:text-gray-500 font-normal uppercase tracking-wide">РђР»СЊС‚РµСЂРЅР°С‚РёРІРЅС‹Р№ РєР»РёРµРЅС‚</small>
                 <span className="text-sm font-semibold tracking-tight">V2RayTun</span>
               </div>
             </a>
@@ -120,21 +119,21 @@ const platformsData: PlatformData[] = [
       },
       {
         number: '02',
-        title: 'Получите конфигурацию',
-        description: <>Скопируйте свой профиль в разделе <strong>👤 Мой профиль &gt; 🔗 Ссылки</strong> в боте RayLink.</>,
-        media: { type: 'image', src: 'media/ios/step2.png', alt: 'Копирование профиля' },
+        title: 'РџРѕР»СѓС‡РёС‚Рµ РєРѕРЅС„РёРіСѓСЂР°С†РёСЋ',
+        description: <>РЎРєРѕРїРёСЂСѓР№С‚Рµ СЃРІРѕР№ РїСЂРѕС„РёР»СЊ РІ СЂР°Р·РґРµР»Рµ <strong>рџ‘¤ РњРѕР№ РїСЂРѕС„РёР»СЊ &gt; рџ”— РЎСЃС‹Р»РєРё</strong> РІ Р±РѕС‚Рµ RayLink.</>,
+        media: { type: 'image', src: 'media/ios/step2.png', alt: 'РљРѕРїРёСЂРѕРІР°РЅРёРµ РїСЂРѕС„РёР»СЏ' },
       },
       {
         number: '03',
-        title: 'Импортируйте профиль',
-        description: <>Откройте приложение Happ, нажмите <strong>«+»</strong> и вставьте скопированную ссылку из бота.</>,
-        media: { type: 'video', src: 'media/ios/step3.mp4', alt: 'Импорт профиля' },
+        title: 'РРјРїРѕСЂС‚РёСЂСѓР№С‚Рµ РїСЂРѕС„РёР»СЊ',
+        description: <>РћС‚РєСЂРѕР№С‚Рµ РїСЂРёР»РѕР¶РµРЅРёРµ Happ, РЅР°Р¶РјРёС‚Рµ <strong>В«+В»</strong> Рё РІСЃС‚Р°РІСЊС‚Рµ СЃРєРѕРїРёСЂРѕРІР°РЅРЅСѓСЋ СЃСЃС‹Р»РєСѓ РёР· Р±РѕС‚Р°.</>,
+        media: { type: 'video', src: 'media/ios/step3.mp4', alt: 'РРјРїРѕСЂС‚ РїСЂРѕС„РёР»СЏ' },
       },
       {
         number: '04',
-        title: 'Подключитесь',
-        description: 'Выберите добавленную конфигурацию и нажмите кнопку подключения. Готово!',
-        media: { type: 'image', src: 'media/ios/step4.png', alt: 'Подключение' },
+        title: 'РџРѕРґРєР»СЋС‡РёС‚РµСЃСЊ',
+        description: 'Р’С‹Р±РµСЂРёС‚Рµ РґРѕР±Р°РІР»РµРЅРЅСѓСЋ РєРѕРЅС„РёРіСѓСЂР°С†РёСЋ Рё РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ РїРѕРґРєР»СЋС‡РµРЅРёСЏ. Р“РѕС‚РѕРІРѕ!',
+        media: { type: 'image', src: 'media/ios/step4.png', alt: 'РџРѕРґРєР»СЋС‡РµРЅРёРµ' },
       },
     ],
   },
@@ -145,8 +144,8 @@ const platformsData: PlatformData[] = [
     steps: [
       {
         number: '01',
-        title: 'Скачайте приложение',
-        description: 'Установите официальное приложение Happ из Google Play:',
+        title: 'РЎРєР°С‡Р°Р№С‚Рµ РїСЂРёР»РѕР¶РµРЅРёРµ',
+        description: 'РЈСЃС‚Р°РЅРѕРІРёС‚Рµ РѕС„РёС†РёР°Р»СЊРЅРѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ Happ РёР· Google Play:',
         action: (
           <a
             href="https://play.google.com/store/apps/details?id=com.happproxy&pcampaignid=web_share"
@@ -156,31 +155,31 @@ const platformsData: PlatformData[] = [
           >
             <GooglePlayIcon className="w-9 h-9 flex-shrink-0 text-lime transition-transform duration-300 group-hover:scale-110" />
             <div className="flex flex-col leading-tight">
-              <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Загрузить клиент</small>
-              <span className="text-base font-bold tracking-tight">Happ в Google Play</span>
+              <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Р—Р°РіСЂСѓР·РёС‚СЊ РєР»РёРµРЅС‚</small>
+              <span className="text-base font-bold tracking-tight">Happ РІ Google Play</span>
             </div>
           </a>
         ),
       },
       {
         number: '02',
-        title: 'Получите конфигурацию',
-        description: <>Скопируйте свой профиль в разделе <strong>👤 Мой профиль &gt; 🔗 Ссылки</strong> в боте RayLink.</>,
-        media: { type: 'image', src: 'media/android/step2.png', alt: 'Копирование профиля' },
+        title: 'РџРѕР»СѓС‡РёС‚Рµ РєРѕРЅС„РёРіСѓСЂР°С†РёСЋ',
+        description: <>РЎРєРѕРїРёСЂСѓР№С‚Рµ СЃРІРѕР№ РїСЂРѕС„РёР»СЊ РІ СЂР°Р·РґРµР»Рµ <strong>рџ‘¤ РњРѕР№ РїСЂРѕС„РёР»СЊ &gt; рџ”— РЎСЃС‹Р»РєРё</strong> РІ Р±РѕС‚Рµ RayLink.</>,
+        media: { type: 'image', src: 'media/android/step2.png', alt: 'РљРѕРїРёСЂРѕРІР°РЅРёРµ РїСЂРѕС„РёР»СЏ' },
       },
       {
         number: '03',
-        title: 'Импортируйте профиль',
-        description: <>Откройте приложение, нажмите <strong>«+»</strong></>,
-        media: { type: 'image', src: 'media/android/step3_1.png', alt: 'Нажмите плюс' },
-        extraDescription: <><strong>«Импорт из буфера обмена»</strong> и вставьте ссылку из бота.</>,
-        extraMedia: { type: 'image', src: 'media/android/step3_2.png', alt: 'Импорт из буфера обмена' },
+        title: 'РРјРїРѕСЂС‚РёСЂСѓР№С‚Рµ РїСЂРѕС„РёР»СЊ',
+        description: <>РћС‚РєСЂРѕР№С‚Рµ РїСЂРёР»РѕР¶РµРЅРёРµ, РЅР°Р¶РјРёС‚Рµ <strong>В«+В»</strong></>,
+        media: { type: 'image', src: 'media/android/step3_1.png', alt: 'РќР°Р¶РјРёС‚Рµ РїР»СЋСЃ' },
+        extraDescription: <><strong>В«РРјРїРѕСЂС‚ РёР· Р±СѓС„РµСЂР° РѕР±РјРµРЅР°В»</strong> Рё РІСЃС‚Р°РІСЊС‚Рµ СЃСЃС‹Р»РєСѓ РёР· Р±РѕС‚Р°.</>,
+        extraMedia: { type: 'image', src: 'media/android/step3_2.png', alt: 'РРјРїРѕСЂС‚ РёР· Р±СѓС„РµСЂР° РѕР±РјРµРЅР°' },
       },
       {
         number: '04',
-        title: 'Подключитесь',
-        description: 'Выберите добавленную конфигурацию и нажмите кнопку подключения. Готово!',
-        media: { type: 'image', src: 'media/android/step4.png', alt: 'Подключение' },
+        title: 'РџРѕРґРєР»СЋС‡РёС‚РµСЃСЊ',
+        description: 'Р’С‹Р±РµСЂРёС‚Рµ РґРѕР±Р°РІР»РµРЅРЅСѓСЋ РєРѕРЅС„РёРіСѓСЂР°С†РёСЋ Рё РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ РїРѕРґРєР»СЋС‡РµРЅРёСЏ. Р“РѕС‚РѕРІРѕ!',
+        media: { type: 'image', src: 'media/android/step4.png', alt: 'РџРѕРґРєР»СЋС‡РµРЅРёРµ' },
       },
     ],
   },
@@ -191,8 +190,8 @@ const platformsData: PlatformData[] = [
     steps: [
       {
         number: '01',
-        title: 'Загрузите клиент',
-        description: 'Скачайте Happ для Windows:',
+        title: 'Р—Р°РіСЂСѓР·РёС‚Рµ РєР»РёРµРЅС‚',
+        description: 'РЎРєР°С‡Р°Р№С‚Рµ Happ РґР»СЏ Windows:',
         action: (
           <a
             href="https://github.com/Happ-proxy/happ-desktop/releases/latest/download/setup-Happ.x64.exe"
@@ -202,36 +201,36 @@ const platformsData: PlatformData[] = [
           >
             <WindowsIcon className="w-9 h-9 flex-shrink-0 text-lime transition-transform duration-300 group-hover:scale-110" />
             <div className="flex flex-col leading-tight">
-              <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Скачать</small>
-              <span className="text-base font-bold tracking-tight">HAPP для Windows</span>
+              <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">РЎРєР°С‡Р°С‚СЊ</small>
+              <span className="text-base font-bold tracking-tight">HAPP РґР»СЏ Windows</span>
             </div>
           </a>
         ),
       },
       {
         number: '02',
-        title: 'Запуск установщика',
-        description: 'Запустите скачанный .exe файл и следуйте инструкциям мастера установки.',
+        title: 'Р—Р°РїСѓСЃРє СѓСЃС‚Р°РЅРѕРІС‰РёРєР°',
+        description: 'Р—Р°РїСѓСЃС‚РёС‚Рµ СЃРєР°С‡Р°РЅРЅС‹Р№ .exe С„Р°Р№Р» Рё СЃР»РµРґСѓР№С‚Рµ РёРЅСЃС‚СЂСѓРєС†РёСЏРј РјР°СЃС‚РµСЂР° СѓСЃС‚Р°РЅРѕРІРєРё.',
       },
       {
         number: '03',
-        title: 'Получите конфигурацию',
-        description: <>Скопируйте свой профиль в разделе <strong>👤 Мой профиль &gt; 🔗 Ссылки</strong> в боте RayLink.</>,
-        media: { type: 'image', src: 'media/windows/step3.png', alt: 'Копирование профиля' },
+        title: 'РџРѕР»СѓС‡РёС‚Рµ РєРѕРЅС„РёРіСѓСЂР°С†РёСЋ',
+        description: <>РЎРєРѕРїРёСЂСѓР№С‚Рµ СЃРІРѕР№ РїСЂРѕС„РёР»СЊ РІ СЂР°Р·РґРµР»Рµ <strong>рџ‘¤ РњРѕР№ РїСЂРѕС„РёР»СЊ &gt; рџ”— РЎСЃС‹Р»РєРё</strong> РІ Р±РѕС‚Рµ RayLink.</>,
+        media: { type: 'image', src: 'media/windows/step3.png', alt: 'РљРѕРїРёСЂРѕРІР°РЅРёРµ РїСЂРѕС„РёР»СЏ' },
       },
       {
         number: '04',
-        title: 'Настройте подключение',
-        description: 'Вставьте конфигурационную ссылку из бота (Ctrl+V)',
-        media: { type: 'image', src: 'media/windows/step4_1.png', alt: 'Вставка конфигурации' },
-        extraDescription: 'Убедитесь, что у вас включен режим TUN',
-        extraMedia: { type: 'image', src: 'media/windows/step4_2.png', alt: 'Режим TUN' },
+        title: 'РќР°СЃС‚СЂРѕР№С‚Рµ РїРѕРґРєР»СЋС‡РµРЅРёРµ',
+        description: 'Р’СЃС‚Р°РІСЊС‚Рµ РєРѕРЅС„РёРіСѓСЂР°С†РёРѕРЅРЅСѓСЋ СЃСЃС‹Р»РєСѓ РёР· Р±РѕС‚Р° (Ctrl+V)',
+        media: { type: 'image', src: 'media/windows/step4_1.png', alt: 'Р’СЃС‚Р°РІРєР° РєРѕРЅС„РёРіСѓСЂР°С†РёРё' },
+        extraDescription: 'РЈР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ Сѓ РІР°СЃ РІРєР»СЋС‡РµРЅ СЂРµР¶РёРј TUN',
+        extraMedia: { type: 'image', src: 'media/windows/step4_2.png', alt: 'Р РµР¶РёРј TUN' },
       },
       {
         number: '05',
-        title: 'Подключитесь',
-        description: 'Выберите добавленную конфигурацию и нажмите кнопку подключения. Готово!',
-        media: { type: 'image', src: 'media/windows/step5.png', alt: 'Подключение' },
+        title: 'РџРѕРґРєР»СЋС‡РёС‚РµСЃСЊ',
+        description: 'Р’С‹Р±РµСЂРёС‚Рµ РґРѕР±Р°РІР»РµРЅРЅСѓСЋ РєРѕРЅС„РёРіСѓСЂР°С†РёСЋ Рё РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ РїРѕРґРєР»СЋС‡РµРЅРёСЏ. Р“РѕС‚РѕРІРѕ!',
+        media: { type: 'image', src: 'media/windows/step5.png', alt: 'РџРѕРґРєР»СЋС‡РµРЅРёРµ' },
       },
     ],
   },
@@ -245,39 +244,37 @@ const platformsData: PlatformData[] = [
 
 const faqs = [
   {
-    question: 'Как получить пробный период?',
+    question: 'РљР°Рє РїРѕР»СѓС‡РёС‚СЊ РїСЂРѕР±РЅС‹Р№ РїРµСЂРёРѕРґ?',
     answer: (
       <>
-        Пробный период составляет <strong>72 часа</strong>. Для активации нужно перейти в{' '}
-        <a href="https://t.me/raylink_service_bot" className="text-lime hover:underline font-medium">Telegram</a> или{' '}
-        <a href="https://vk.com/raylinkvpn" className="text-lime hover:underline font-medium">VK</a> и нажать кнопку{' '}
-        <strong>⚙️ Тестовый период</strong>
+        РџСЂРѕР±РЅС‹Р№ РїРµСЂРёРѕРґ СЃРѕСЃС‚Р°РІР»СЏРµС‚ <strong>72 С‡Р°СЃР°</strong>. Р”Р»СЏ Р°РєС‚РёРІР°С†РёРё РЅСѓР¶РЅРѕ РїРµСЂРµР№С‚Рё РІ{' '}
+        <a href="https://t.me/raylink_service_bot" className="text-lime hover:underline font-medium">Telegram</a> РёР»Рё{' '}
+        <a href="https://vk.com/raylinkvpn" className="text-lime hover:underline font-medium">VK</a> Рё РЅР°Р¶Р°С‚СЊ РєРЅРѕРїРєСѓ{' '}
+        <strong>вљ™пёЏ РўРµСЃС‚РѕРІС‹Р№ РїРµСЂРёРѕРґ</strong>
       </>
     ),
   },
   {
-    question: 'Можно ли использовать на нескольких устройствах?',
+    question: 'РњРѕР¶РЅРѕ Р»Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РЅР° РЅРµСЃРєРѕР»СЊРєРёС… СѓСЃС‚СЂРѕР№СЃС‚РІР°С…?',
     answer: (
       <>
-        Да, одна подписка работает на <strong>3 устройствах одновременно</strong>. Вы можете использовать RayLink на телефоне и компьютере. Также профили совместимы с <strong>TV</strong> — подключайте VPN прямо на телевизоре!
+        Р”Р°, РѕРґРЅР° РїРѕРґРїРёСЃРєР° СЂР°Р±РѕС‚Р°РµС‚ РЅР° <strong>3 СѓСЃС‚СЂРѕР№СЃС‚РІР°С… РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ</strong>. Р’С‹ РјРѕР¶РµС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ RayLink РЅР° С‚РµР»РµС„РѕРЅРµ Рё РєРѕРјРїСЊСЋС‚РµСЂРµ. РўР°РєР¶Рµ РїСЂРѕС„РёР»Рё СЃРѕРІРјРµСЃС‚РёРјС‹ СЃ <strong>TV</strong> вЂ” РїРѕРґРєР»СЋС‡Р°Р№С‚Рµ VPN РїСЂСЏРјРѕ РЅР° С‚РµР»РµРІРёР·РѕСЂРµ!
       </>
     ),
   },
   {
-    question: 'Как продлить подписку?',
+    question: 'РљР°Рє РїСЂРѕРґР»РёС‚СЊ РїРѕРґРїРёСЃРєСѓ?',
     answer: (
       <>
-        Откройте бота в <a href="https://t.me/raylink_service_bot" className="text-lime hover:underline font-medium">Telegram</a> или{' '}
-        <a href="https://vk.com/raylinkvpn" className="text-lime hover:underline font-medium">VK</a>, выберите раздел{' '}
-        <strong>💳 Тарифы (Оплата)</strong> и следуйте инструкциям. Подписка продлится автоматически после оплаты.
+        РћС‚РєСЂРѕР№С‚Рµ Р±РѕС‚Р° РІ <a href="https://t.me/raylink_service_bot" className="text-lime hover:underline font-medium">Telegram</a> РёР»Рё{' '}
+        <a href="https://vk.com/raylinkvpn" className="text-lime hover:underline font-medium">VK</a>, РІС‹Р±РµСЂРёС‚Рµ СЂР°Р·РґРµР»{' '}
+        <strong>рџ’і РўР°СЂРёС„С‹ (РћРїР»Р°С‚Р°)</strong> Рё СЃР»РµРґСѓР№С‚Рµ РёРЅСЃС‚СЂСѓРєС†РёСЏРј. РџРѕРґРїРёСЃРєР° РїСЂРѕРґР»РёС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РїРѕСЃР»Рµ РѕРїР»Р°С‚С‹.
       </>
     ),
   },
 ];
 
-const InstructionsPage = () => {
-  const navigate = useNavigate();
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform>('ios');
+const InstructionsPage = () => {  const [selectedPlatform, setSelectedPlatform] = useState<Platform>('ios');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const pageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -351,11 +348,6 @@ const InstructionsPage = () => {
       }
     });
   }, [openFaqIndex]);
-
-  const goBack = () => {
-    navigate('/');
-  };
-
   const currentPlatform = platformsData.find((p) => p.id === selectedPlatform);
 
   return (
@@ -371,15 +363,7 @@ const InstructionsPage = () => {
       `}</style>
 
       <header className="sticky top-0 z-50 border-b border-black/5 dark:border-white/5 bg-white/95 dark:bg-[rgba(10,10,10,0.95)] backdrop-blur-[20px]">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center gap-4">
-          <button
-            onClick={goBack}
-            className="flex items-center gap-2 text-gray-600 dark:text-gray-light hover:text-lime transition-colors duration-300"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span className="font-montserrat text-sm">Назад</span>
-          </button>
-          <h1 className="font-syncopate text-lg font-bold text-dark dark:text-white uppercase tracking-wide">Инструкция по подключению</h1>
+        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center">          <h1 className="font-syncopate text-lg font-bold text-dark dark:text-white uppercase tracking-wide">РРЅСЃС‚СЂСѓРєС†РёСЏ РїРѕ РїРѕРґРєР»СЋС‡РµРЅРёСЋ</h1>
         </div>
       </header>
 
@@ -388,7 +372,7 @@ const InstructionsPage = () => {
           {/* Hero header */}
           <div className="text-center pt-6 pb-8">
             <div className="font-syncopate text-2xl font-bold tracking-widest text-dark dark:text-white uppercase mb-2">RayLink</div>
-            <p className="font-montserrat text-sm text-gray-500 dark:text-gray-light">Инструкция по настройке</p>
+            <p className="font-montserrat text-sm text-gray-500 dark:text-gray-light">РРЅСЃС‚СЂСѓРєС†РёСЏ РїРѕ РЅР°СЃС‚СЂРѕР№РєРµ</p>
           </div>
 
           {/* Platform selector */}
@@ -439,12 +423,12 @@ const InstructionsPage = () => {
                 <div className="absolute inset-x-0 top-0 h-px pointer-events-none block dark:hidden" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%)' }} />
                 <div className="relative z-10">
                   <span className="inline-block mb-5 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-lime/30 text-lime bg-lime/10">
-                    В разработке
+                    Р’ СЂР°Р·СЂР°Р±РѕС‚РєРµ
                   </span>
-                  <div className="text-5xl mb-4 animate-float-icon">🍏</div>
-                  <h3 className="font-martian text-lg font-bold text-dark dark:text-white mb-2">Инструкция для macOS скоро</h3>
+                  <div className="text-5xl mb-4 animate-float-icon">рџЌЏ</div>
+                  <h3 className="font-martian text-lg font-bold text-dark dark:text-white mb-2">РРЅСЃС‚СЂСѓРєС†РёСЏ РґР»СЏ macOS СЃРєРѕСЂРѕ</h3>
                   <p className="font-montserrat text-sm text-gray-500 dark:text-gray-light max-w-sm mx-auto leading-relaxed">
-                    Мы активно работаем над инструкцией для macOS. Следите за обновлениями в нашем новостном канале!
+                    РњС‹ Р°РєС‚РёРІРЅРѕ СЂР°Р±РѕС‚Р°РµРј РЅР°Рґ РёРЅСЃС‚СЂСѓРєС†РёРµР№ РґР»СЏ macOS. РЎР»РµРґРёС‚Рµ Р·Р° РѕР±РЅРѕРІР»РµРЅРёСЏРјРё РІ РЅР°С€РµРј РЅРѕРІРѕСЃС‚РЅРѕРј РєР°РЅР°Р»Рµ!
                   </p>
                 </div>
               </div>
@@ -474,7 +458,7 @@ const InstructionsPage = () => {
                           {step.media.type === 'video' ? (
                             <video autoPlay loop muted playsInline controls className="w-full h-auto block">
                               <source src={step.media.src} type="video/mp4" />
-                              Ваш браузер не поддерживает видео.
+                              Р’Р°С€ Р±СЂР°СѓР·РµСЂ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РІРёРґРµРѕ.
                             </video>
                           ) : (
                             <img src={step.media.src} alt={step.media.alt} className="w-full h-auto block" />
@@ -491,7 +475,7 @@ const InstructionsPage = () => {
                           {step.extraMedia.type === 'video' ? (
                             <video autoPlay loop muted playsInline controls className="w-full h-auto block">
                               <source src={step.extraMedia.src} type="video/mp4" />
-                              Ваш браузер не поддерживает видео.
+                              Р’Р°С€ Р±СЂР°СѓР·РµСЂ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РІРёРґРµРѕ.
                             </video>
                           ) : (
                             <img src={step.extraMedia.src} alt={step.extraMedia.alt} className="w-full h-auto block" />
@@ -507,7 +491,7 @@ const InstructionsPage = () => {
 
           {/* FAQ */}
           <div ref={faqContainerRef} className="mb-8">
-            <h3 className="font-martian text-lg font-bold text-dark dark:text-white mb-5 tracking-tight">Частые вопросы</h3>
+            <h3 className="font-martian text-lg font-bold text-dark dark:text-white mb-5 tracking-tight">Р§Р°СЃС‚С‹Рµ РІРѕРїСЂРѕСЃС‹</h3>
             <div className="space-y-4">
               {faqs.map((faq, idx) => {
                 const isOpen = openFaqIndex === idx;
@@ -544,7 +528,7 @@ const InstructionsPage = () => {
 
           {/* Support */}
           <div className="text-center pt-8 border-t border-black/[0.08] dark:border-white/[0.08]">
-            <p className="font-syncopate text-[11px] text-gray-500 dark:text-gray-light uppercase tracking-[0.15em] mb-5">Нужна помощь?</p>
+            <p className="font-syncopate text-[11px] text-gray-500 dark:text-gray-light uppercase tracking-[0.15em] mb-5">РќСѓР¶РЅР° РїРѕРјРѕС‰СЊ?</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="https://t.me/RayLinkSupport"
@@ -555,7 +539,7 @@ const InstructionsPage = () => {
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.52-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.44-.42-1.38-.88.03-.24.38-.49 1.03-.74 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.89 5.17-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.13-.03.25z" />
                 </svg>
-                Написать в поддержку
+                РќР°РїРёСЃР°С‚СЊ РІ РїРѕРґРґРµСЂР¶РєСѓ
               </a>
               <a
                 href="https://t.me/raylink_news"
@@ -566,7 +550,7 @@ const InstructionsPage = () => {
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z" />
                 </svg>
-                Новостной канал
+                РќРѕРІРѕСЃС‚РЅРѕР№ РєР°РЅР°Р»
               </a>
             </div>
           </div>
@@ -577,3 +561,4 @@ const InstructionsPage = () => {
 };
 
 export default InstructionsPage;
+
