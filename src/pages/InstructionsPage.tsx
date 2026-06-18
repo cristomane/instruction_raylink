@@ -89,9 +89,9 @@ const platformsData: PlatformData[] = [
               href="https://apps.apple.com/ru/app/happ-proxy-utility-plus/id6746188973"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-500 ease-out hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/50 hover:bg-lime/[0.06] dark:hover:bg-lime/[0.08] hover:shadow-[0_18px_45px_-24px_rgba(199,255,0,0.75)] active:translate-y-0 active:scale-[0.99] w-full"
+              className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-500 ease-out hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/40 hover:bg-lime/[0.035] dark:hover:bg-lime/[0.045] hover:shadow-[0_14px_34px_-26px_rgba(199,255,0,0.48)] active:translate-y-0 active:scale-[0.99] w-full"
             >
-              <AppStoreIcon className="w-9 h-9 flex-shrink-0 text-lime transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 group-hover:drop-shadow-[0_0_14px_rgba(199,255,0,0.65)]" />
+              <AppStoreIcon className="w-9 h-9 flex-shrink-0 text-lime transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 group-hover:drop-shadow-[0_0_9px_rgba(199,255,0,0.38)]" />
               <div className="flex flex-col leading-tight min-w-0">
                 <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Загрузить клиент</small>
                 <div className="flex items-start gap-2 flex-wrap">
