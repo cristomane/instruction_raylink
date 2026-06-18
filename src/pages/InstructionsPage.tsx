@@ -89,14 +89,14 @@ const platformsData: PlatformData[] = [
               href="https://apps.apple.com/ru/app/happ-proxy-utility-plus/id6746188973"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-300 hover:-translate-y-1 hover:border-lime/40 w-full"
+              className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-500 ease-out hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/50 hover:bg-lime/[0.06] dark:hover:bg-lime/[0.08] hover:shadow-[0_18px_45px_-24px_rgba(199,255,0,0.75)] active:translate-y-0 active:scale-[0.99] w-full"
             >
-              <AppStoreIcon className="w-9 h-9 flex-shrink-0 text-lime transition-transform duration-300 group-hover:scale-110" />
+              <AppStoreIcon className="w-9 h-9 flex-shrink-0 text-lime transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 group-hover:drop-shadow-[0_0_14px_rgba(199,255,0,0.65)]" />
               <div className="flex flex-col leading-tight min-w-0">
                 <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Загрузить клиент</small>
                 <div className="flex items-start gap-2 flex-wrap">
                   <span className="text-base font-bold tracking-tight">HAPP в App Store</span>
-                  <span className="px-1.5 py-0.5 rounded-md bg-lime/10 text-lime text-[10px] font-bold uppercase tracking-wide border border-lime/20 mt-0.5">
+                  <span className="px-1.5 py-0.5 rounded-md bg-lime/10 text-lime text-[10px] font-bold uppercase tracking-wide border border-lime/20 mt-0.5 transition-all duration-500 ease-out group-hover:bg-lime group-hover:text-black group-hover:border-lime">
                     Рекомендуем
                   </span>
                 </div>
