@@ -309,6 +309,16 @@ const InstructionsPage = () => {
   const faqContainerRef = useRef<HTMLDivElement>(null);
   const answerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const handlePlatformChange = (platform: Platform) => {
+    if (platform === selectedPlatform) return;
+
+    if (stepsContainerRef.current) {
+      stepsContainerRef.current.style.height = `${stepsContainerRef.current.offsetHeight}px`;
+    }
+
+    setSelectedPlatform(platform);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -320,27 +330,6 @@ const InstructionsPage = () => {
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
       );
-
-      if (stepsContainerRef.current) {
-        const stepCards = stepsContainerRef.current.querySelectorAll('.instruction-step');
-        gsap.fromTo(
-          stepCards,
-          { y: 40, opacity: 0, scale: 0.96 },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.6,
-            stagger: 0.12,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: stepsContainerRef.current,
-              start: 'top 85%',
-              toggleActions: 'play none none none',
-            },
-          }
-        );
-      }
 
       if (faqContainerRef.current) {
         const faqItems = faqContainerRef.current.querySelectorAll('.faq-item');
@@ -363,6 +352,36 @@ const InstructionsPage = () => {
       }
     }, pageRef);
     return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    if (!stepsContainerRef.current) return;
+
+    const container = stepsContainerRef.current;
+    const stepCards = container.querySelectorAll('.instruction-step');
+    const targetHeight = container.scrollHeight;
+
+    gsap.killTweensOf([container, ...Array.from(stepCards)]);
+    gsap.to(container, {
+      height: targetHeight,
+      duration: 0.45,
+      ease: 'power2.out',
+      onComplete: () => {
+        container.style.height = 'auto';
+      },
+    });
+    gsap.fromTo(
+      stepCards,
+      { y: 18, opacity: 0, scale: 0.985 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.45,
+        stagger: 0.055,
+        ease: 'power2.out',
+      }
+    );
   }, [selectedPlatform]);
 
   useEffect(() => {
@@ -413,7 +432,7 @@ const InstructionsPage = () => {
               return (
                 <button
                   key={platform.id}
-                  onClick={() => setSelectedPlatform(platform.id)}
+                  onClick={() => handlePlatformChange(platform.id)}
                   className={`group relative rounded-2xl p-5 text-center transition-all duration-500 ease-out overflow-hidden border hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/40 hover:bg-lime/[0.035] dark:hover:bg-lime/[0.045] hover:shadow-[0_14px_34px_-26px_rgba(199,255,0,0.48)] active:translate-y-0 active:scale-[0.99] ${
                     isActive
                       ? 'bg-lime/[0.03] border-lime/55 shadow-[0_0_0_1px_rgba(163,230,53,0.25),0_8px_24px_rgba(163,230,53,0.08)]'
@@ -438,10 +457,10 @@ const InstructionsPage = () => {
           </div>
 
           {/* Instruction content */}
-          <div ref={stepsContainerRef} className="space-y-6 mb-8">
+          <div ref={stepsContainerRef} className="space-y-6 mb-8 overflow-hidden">
             {currentPlatform?.steps.map((step, idx) => (
                   <div
-                    key={idx}
+                    key={`${selectedPlatform}-${idx}`}
                     className="instruction-step relative overflow-hidden rounded-[28px] bg-white/60 dark:bg-[rgba(255,255,255,0.01)] border border-black/[0.08] dark:border-white/[0.08] shadow-[inset_0_1px_0_rgba(0,0,0,0.03),0_4px_20px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_4px_20px_rgba(0,0,0,0.1)]"
                     style={{ backdropFilter: 'blur(20px) saturate(140%)', WebkitBackdropFilter: 'blur(20px) saturate(140%)' }}
                   >
