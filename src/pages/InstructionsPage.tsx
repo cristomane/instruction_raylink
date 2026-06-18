@@ -226,7 +226,47 @@ const platformsData: PlatformData[] = [
     id: 'macos',
     name: 'macOS',
     icon: MacOSIcon,
-    steps: [],
+    steps: [
+      {
+        number: '01',
+        title: 'Скачайте клиент',
+        description: 'Скачайте универсальную версию Happ для macOS. Она подходит для Mac на Apple Silicon и Intel.',
+        action: (
+          <a
+            href="https://github.com/Happ-proxy/happ-desktop/releases/latest/download/Happ.macOS.universal.dmg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-500 ease-out hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/40 hover:bg-lime/[0.035] dark:hover:bg-lime/[0.045] hover:shadow-[0_14px_34px_-26px_rgba(199,255,0,0.48)] active:translate-y-0 active:scale-[0.99] w-full"
+          >
+            <MacOSIcon className="w-9 h-9 flex-shrink-0 text-lime transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 group-hover:drop-shadow-[0_0_9px_rgba(199,255,0,0.38)]" />
+            <div className="flex flex-col leading-tight">
+              <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Скачать</small>
+              <span className="text-base font-bold tracking-tight">HAPP для macOS</span>
+            </div>
+          </a>
+        ),
+      },
+      {
+        number: '02',
+        title: 'Установите приложение',
+        description: 'Откройте скачанный файл .dmg и перетащите Happ в папку Applications. После этого запустите приложение из Launchpad или Finder.',
+      },
+      {
+        number: '03',
+        title: 'Получите конфигурацию',
+        description: <>Скопируйте свой профиль в разделе <strong>👤 Мой профиль &gt; 🔗 Ссылки</strong> в боте RayLink.</>,
+      },
+      {
+        number: '04',
+        title: 'Импортируйте профиль',
+        description: <>Откройте Happ, нажмите <strong>«+»</strong>, выберите добавление профиля по ссылке или из буфера обмена и вставьте скопированную ссылку из бота.</>,
+      },
+      {
+        number: '05',
+        title: 'Подключитесь',
+        description: 'Выберите добавленную конфигурацию, убедитесь, что включен режим TUN, и нажмите кнопку подключения. Готово!',
+      },
+    ],
   },
 ];
 
@@ -399,27 +439,7 @@ const InstructionsPage = () => {
 
           {/* Instruction content */}
           <div ref={stepsContainerRef} className="space-y-6 mb-8">
-            {selectedPlatform === 'macos' ? (
-              <div
-                className="instruction-step relative overflow-hidden rounded-[28px] bg-white/60 dark:bg-[rgba(255,255,255,0.01)] border border-black/[0.08] dark:border-white/[0.08] shadow-[inset_0_1px_0_rgba(0,0,0,0.03),0_4px_20px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_4px_20px_rgba(0,0,0,0.1)] p-8 lg:p-12 text-center"
-                style={{ backdropFilter: 'blur(20px) saturate(140%)', WebkitBackdropFilter: 'blur(20px) saturate(140%)' }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px pointer-events-none hidden dark:block" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)' }} />
-                <div className="absolute inset-x-0 top-0 h-px pointer-events-none block dark:hidden" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%)' }} />
-                <div className="relative z-10">
-                  <span className="inline-block mb-5 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-lime/30 text-lime bg-lime/10">
-                    В разработке
-                  </span>
-                  <div className="text-5xl mb-4 animate-float-icon">🍏</div>
-                  <h3 className="font-martian text-lg font-bold text-dark dark:text-white mb-2">Инструкция для macOS скоро</h3>
-                  <p className="font-montserrat text-sm text-gray-500 dark:text-gray-light max-w-sm mx-auto leading-relaxed">
-                    Мы активно работаем над инструкцией для macOS. Следите за обновлениями в нашем новостном канале!
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <>
-                {currentPlatform?.steps.map((step, idx) => (
+            {currentPlatform?.steps.map((step, idx) => (
                   <div
                     key={idx}
                     className="instruction-step relative overflow-hidden rounded-[28px] bg-white/60 dark:bg-[rgba(255,255,255,0.01)] border border-black/[0.08] dark:border-white/[0.08] shadow-[inset_0_1px_0_rgba(0,0,0,0.03),0_4px_20px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_4px_20px_rgba(0,0,0,0.1)]"
@@ -469,9 +489,7 @@ const InstructionsPage = () => {
                       )}
                     </div>
                   </div>
-                ))}
-              </>
-            )}
+            ))}
           </div>
 
           {/* FAQ */}
