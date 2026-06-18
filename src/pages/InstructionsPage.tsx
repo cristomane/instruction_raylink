@@ -102,18 +102,6 @@ const platformsData: PlatformData[] = [
                 </div>
               </div>
             </a>
-            <a
-              href="https://apps.apple.com/ru/app/v2raytun/id6476628951"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-4 px-5 py-3.5 rounded-2xl bg-transparent border border-black/5 dark:border-white/5 text-gray-600 dark:text-gray-light transition-all duration-300 hover:border-lime/30 hover:text-dark dark:hover:text-white w-full"
-            >
-              <AppStoreIcon className="w-7 h-7 flex-shrink-0 text-lime/70 transition-transform duration-300 group-hover:scale-110" />
-              <div className="flex flex-col leading-tight">
-                <small className="text-[10px] text-gray-400 dark:text-gray-500 font-normal uppercase tracking-wide">Альтернативный клиент</small>
-                <span className="text-sm font-semibold tracking-tight">V2RayTun</span>
-              </div>
-            </a>
           </div>
         ),
       },
