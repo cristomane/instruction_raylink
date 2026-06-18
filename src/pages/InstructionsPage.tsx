@@ -139,9 +139,9 @@ const platformsData: PlatformData[] = [
             href="https://play.google.com/store/apps/details?id=com.happproxy&pcampaignid=web_share"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-300 hover:-translate-y-1 hover:border-lime/40 w-full"
+            className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-500 ease-out hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/40 hover:bg-lime/[0.035] dark:hover:bg-lime/[0.045] hover:shadow-[0_14px_34px_-26px_rgba(199,255,0,0.48)] active:translate-y-0 active:scale-[0.99] w-full"
           >
-            <GooglePlayIcon className="w-9 h-9 flex-shrink-0 text-lime transition-transform duration-300 group-hover:scale-110" />
+            <GooglePlayIcon className="w-9 h-9 flex-shrink-0 text-lime transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 group-hover:drop-shadow-[0_0_9px_rgba(199,255,0,0.38)]" />
             <div className="flex flex-col leading-tight">
               <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Загрузить клиент</small>
               <span className="text-base font-bold tracking-tight">Happ в Google Play</span>
@@ -185,9 +185,9 @@ const platformsData: PlatformData[] = [
             href="https://github.com/Happ-proxy/happ-desktop/releases/latest/download/setup-Happ.x64.exe"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-300 hover:-translate-y-1 hover:border-lime/40 w-full"
+            className="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 text-dark dark:text-white transition-all duration-500 ease-out hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/40 hover:bg-lime/[0.035] dark:hover:bg-lime/[0.045] hover:shadow-[0_14px_34px_-26px_rgba(199,255,0,0.48)] active:translate-y-0 active:scale-[0.99] w-full"
           >
-            <WindowsIcon className="w-9 h-9 flex-shrink-0 text-lime transition-transform duration-300 group-hover:scale-110" />
+            <WindowsIcon className="w-9 h-9 flex-shrink-0 text-lime transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 group-hover:drop-shadow-[0_0_9px_rgba(199,255,0,0.38)]" />
             <div className="flex flex-col leading-tight">
               <small className="text-[11px] text-gray-500 dark:text-gray-light font-normal uppercase tracking-wide">Скачать</small>
               <span className="text-base font-bold tracking-tight">HAPP для Windows</span>
@@ -374,20 +374,20 @@ const InstructionsPage = () => {
                 <button
                   key={platform.id}
                   onClick={() => setSelectedPlatform(platform.id)}
-                  className={`relative rounded-2xl p-5 text-center transition-all duration-300 overflow-hidden border ${
+                  className={`group relative rounded-2xl p-5 text-center transition-all duration-500 ease-out overflow-hidden border hover:-translate-y-0.5 hover:scale-[1.01] hover:border-lime/40 hover:bg-lime/[0.035] dark:hover:bg-lime/[0.045] hover:shadow-[0_14px_34px_-26px_rgba(199,255,0,0.48)] active:translate-y-0 active:scale-[0.99] ${
                     isActive
                       ? 'bg-lime/[0.03] border-lime/55 shadow-[0_0_0_1px_rgba(163,230,53,0.25),0_8px_24px_rgba(163,230,53,0.08)]'
-                      : 'bg-gray-100 dark:bg-[#111] border-black/[0.08] dark:border-white/[0.08] hover:-translate-y-1 hover:border-black/20 dark:hover:border-white/20'
+                      : 'bg-gray-100 dark:bg-[#111] border-black/[0.08] dark:border-white/[0.08]'
                   }`}
                 >
                   <Icon
-                    className={`w-10 h-10 mx-auto mb-3 transition-colors duration-300 ${
-                      isActive ? 'text-lime animate-float-icon' : 'text-gray-400 dark:text-gray-500'
+                    className={`w-10 h-10 mx-auto mb-3 transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 group-hover:drop-shadow-[0_0_9px_rgba(199,255,0,0.38)] ${
+                      isActive ? 'text-lime animate-float-icon' : 'text-gray-400 dark:text-gray-500 group-hover:text-lime'
                     }`}
                   />
                   <span
-                    className={`font-martian text-sm font-semibold transition-colors duration-300 ${
-                      isActive ? 'text-dark dark:text-white' : 'text-gray-500 dark:text-gray-light'
+                    className={`font-martian text-sm font-semibold transition-colors duration-500 ease-out ${
+                      isActive ? 'text-dark dark:text-white' : 'text-gray-500 dark:text-gray-light group-hover:text-dark dark:group-hover:text-white'
                     }`}
                   >
                     {platform.name}
