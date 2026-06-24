@@ -102,9 +102,6 @@ const platformsData: PlatformData[] = [
                 </div>
               </div>
             </a>
-            <div className="rounded-xl border border-lime/15 bg-lime/[0.04] px-4 py-3 text-[12px] leading-relaxed text-gray-600 dark:text-gray-light">
-              <span className="font-semibold text-dark dark:text-white">Небольшой нюанс:</span> приложение может быть недоступно в РФ. Если App Store не откроет страницу, достаточно переключить регион Apple ID или войти в учетную запись другой страны — установка займет пару минут, а дальше все шаги останутся такими же.
-            </div>
           </div>
         ),
       },
