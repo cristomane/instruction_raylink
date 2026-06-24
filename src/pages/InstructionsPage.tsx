@@ -115,7 +115,7 @@ const platformsData: PlatformData[] = [
         number: '03',
         title: 'Импортируйте профиль',
         description: <>Откройте приложение Happ, нажмите <strong>«+»</strong> и вставьте скопированную ссылку из бота.</>,
-        media: { type: 'video', src: 'media/ios/step3.mp4', alt: 'Импорт профиля' },
+        media: { type: 'image', src: 'media/ios/step3.gif', alt: 'Импорт профиля' },
       },
       {
         number: '04',
