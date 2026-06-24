@@ -158,10 +158,8 @@ const platformsData: PlatformData[] = [
       {
         number: '03',
         title: 'Импортируйте профиль',
-        description: <>Откройте приложение, нажмите <strong>«+»</strong></>,
-        media: { type: 'image', src: 'media/android/step3_1.png', alt: 'Нажмите плюс' },
-        extraDescription: <><strong>«Импорт из буфера обмена»</strong> и вставьте ссылку из бота.</>,
-        extraMedia: { type: 'image', src: 'media/android/step3_2.png', alt: 'Импорт из буфера обмена' },
+        description: <>Откройте приложение Happ, нажмите <strong>«+»</strong> и вставьте скопированную ссылку из бота.</>,
+        media: { type: 'image', src: 'media/android/step3.gif', alt: 'Импорт профиля' },
       },
       {
         number: '04',
